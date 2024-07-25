@@ -1,0 +1,46 @@
+
+Q1.
+select year('2024-02-18') as Year;
+
+Q2.
+select date('2020-01-23') as valid;
+
+Q3.
+SELECT Password FROM mysql.user WHERE User='[username]';
+
+Q4. Get db date
+SELECT GETDATE();
+
+Q5. Get database name
+show databases;
+
+Q6. Get version of mysql server
+mysql --version
+
+Q7. Do Bitwise OR,AND,Xor
+select 3 | 4
+select 3 & 4
+select 3 ^ 4
+
+Q8. Difference between days in terms of days
+SELECT DATEDIFF('2007-12-31','2007-12-30');
+
+Q9. Add 2hrs50mins to time
+SELECT ADDTIME('2007-12-31 23:59:59.1', '1:1:1.2');
+
+Q10. Floor and ceil of a number
+select floor(6.28);
+select ceil(6.28) ;
+
+Q11. Do operations on RegEx
+select
+
+Q12 Compare 2 strings
+select 'abc' like 'cde' ;
+
+Q13. Simulate an if else statement
+select if(3 > 5,'true','false');
+
+Q14. Grant all access priviledges
+GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' IDENTIFIED BY  
+'password' WITH GRANT OPTION;
