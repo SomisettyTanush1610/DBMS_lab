@@ -11,11 +11,11 @@ CREATE TABLE Student (
 
 -- Insert 5 student records
 INSERT INTO Student (Std_rollno, Std_name, Dept, Course1, Course2, Course3, Course4) VALUES
-(1, 'John Doe', 'CSE', 'DBMS', 'OS', 'DS', 'Maths'),
-(2, 'Jane Smith', 'ECE', 'Signals', 'Networks', 'Electronics', 'Maths'),
-(3, 'Alice Johnson', 'MECH', 'Thermo', 'Fluid', 'Mechanics', 'Maths'),
-(4, 'Bob Brown', 'CIVIL', 'Structures', 'Geo', 'Hydraulics', 'Maths'),
-(5, 'Charlie Davis', 'EEE', 'Circuits', 'EMF', 'Power', 'Maths');
+(1, 'Sharv', 'CSE', 'DBMS', 'OS', 'DS', 'Maths'),
+(2, 'Pawan', 'CSE', 'Signals', 'Networks', 'OS', 'Maths'),
+(3, 'Alice', 'MECH', 'Thermo', 'Fluid', 'Mechanics', 'Maths'),
+(4, 'Ruby', 'CSE', 'Structures', 'OS', 'DSA', 'Maths'),
+(5, 'Penny', 'MME', 'Metallrgy', 'Geo', 'Chemistry', 'Maths');
 
 -- Drop Course2 and Course3 columns
 ALTER TABLE Student
@@ -26,8 +26,21 @@ DROP COLUMN Course3;
 
 -- Add DoB and email columns
 ALTER TABLE Student
-ADD DoB DATE NOT NULL,
+ADD DoB DATE,
 ADD email VARCHAR(50) CONSTRAINT email_format CHECK (email LIKE '%@nitt.edu');
+
+update Student set DoB = '2003-10-11' where Std_rollno = '3';
+update Student set DoB = '2004-10-11' where Std_rollno = '1';
+update Student set DoB = '2005-10-11' where Std_rollno = '2';
+update Student set DoB = '2006-10-11' where Std_rollno = '4';
+update Student set DoB = '2007-10-11' where Std_rollno = '5';
+
+update Student set email = '106122101@nitt.edu' where Std_rollno = '1';
+update Student set email = '106122110@nitt.edu' where Std_rollno = '2';
+update Student set email = '106122088@nitt.edu' where Std_rollno = '3';
+update Student set email = '106122001@nitt.edu' where Std_rollno = '4';
+update Student set email = '106122002@nitt.edu' where Std_rollno = '5';
+
 
 -- Change Course1 datatype to VARCHAR2
 ALTER TABLE Student
